@@ -1,0 +1,10 @@
+{
+  "includeDeclarations": "true",
+  "excludeExternals": "true",
+  "mode": "modules",
+  "module": "commonjs",
+  "target": "ES6",
+  "out": "./docs/type_doc",
+  "theme": "default",
+  "exclude": "**/*.spec.ts"
+}

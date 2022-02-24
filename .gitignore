@@ -1,0 +1,14 @@
+# IDE
+.idea/
+.vscode/
+
+# NODE
+node_modules/
+
+test/examples/
+
+# OUT
+build/
+dist/
+coverage/
+docs/type_doc/
