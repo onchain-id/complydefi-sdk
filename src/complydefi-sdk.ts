@@ -1,4 +1,4 @@
-import { Complydefi } from './complydefi/Complydefi';
+import { ComplyDefi } from './complydefi/complydefi';
 import { SignerModule } from './core/SignerModule';
 import * as utils from "./utils-module";
 
@@ -11,7 +11,7 @@ const constants = {
 };
 
 export {
-  Complydefi,
+  ComplyDefi,
   SignerModule,
   utils,
   constants,

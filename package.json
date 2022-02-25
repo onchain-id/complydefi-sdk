@@ -26,7 +26,6 @@
   "dependencies": {
     "@ethersproject/providers": "^5.5.3",
     "@onchain-id/solidity": "^1.4.0",
-    "axios": "^0.26.0",
     "ethers": "^5.5.4"
   },
   "devDependencies": {

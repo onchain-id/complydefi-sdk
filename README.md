@@ -1,6 +1,6 @@
 # COMPLYDEFI SDK
 
-> This package facilitates the interaction with Complydefi stored in the BlockChain.
+> This package facilitates the interaction with ComplyDefi stored in the BlockChain.
 
 ## Specifications
 
@@ -31,7 +31,7 @@ const ethers = require('ethers');
 
 const provider = ethers.getDefaultProvider('ropsten');
 
-const complydefi = await Complydefi.at('0x...', { provider });
+const complyDefi = await Complydefi.at('0x...', {provider});
 ```
 
 Connect to JSON RPC:
@@ -60,6 +60,40 @@ Connect to metamask:
 // changed in MetaMask, it causes a page refresh.
 
 let provider = new ethers.providers.Web3Provider(web3.currentProvider);
+```
+
+### Examples
+
+#### Get required claims
+
+```javascript
+const { ComplyDefiSDK } = require('@tokenyICO/complydefi-sdk');
+
+const provider = new ethers.providers.JsonRpcProvider();
+
+(async () => {
+    const complyDefi = new ComplyDefiSDK.ComplyDefi('0xadD92F8Ef0729E969c5a98Ea5740c9b644B362e3', { provider });
+
+    const claims = await complyDefi.getRequiredClaims();
+
+    console.log(claims); ['claim1', 'claim2']
+})();
+```
+
+#### Check compliance of wallet address
+
+```javascript
+const { ComplyDefiSDK } = require('@tokenyICO/complydefi-sdk');
+
+const provider = new ethers.providers.JsonRpcProvider();
+
+(async () => {
+  const complyDefi = new ComplyDefiSDK.ComplyDefi('0xadD92F8Ef0729E969c5a98Ea5740c9b644B362e3', { provider });
+
+  const isComply = await complyDefi.isComply('0xasfgdsgd...dsasd');
+  
+  console.log(isComply); // true or false
+})();
 ```
 
 ## Development

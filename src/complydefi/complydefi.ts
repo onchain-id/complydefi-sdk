@@ -3,7 +3,7 @@ import { Provider } from '@ethersproject/providers';
 import { normalizeAddress, resolveENS } from '../core/utils/ENS';
 import { InvalidProviderError } from '../core/errors/Errors';
 import { BlockchainOptions } from '../core/utils/blockchain-options';
-import { ComplydefiInterface } from "./complydefi.interface";
+import { ComplyDefiInterface } from "./complydefi.interface";
 
 export class InvalidClaimError extends Error {
   public constructor({ message = 'Definition of the Claim is not valid.' }: { message?: string } = {}) {
@@ -14,18 +14,18 @@ export class InvalidClaimError extends Error {
   }
 }
 
-export class Complydefi implements ComplydefiInterface {
+export class ComplyDefi implements ComplyDefiInterface {
   public address: string;
   public provider?: Provider | Signer;
   private deploymentContract?: Contract;
 
   /**
-   * Instantiate a new Complydefi with the provided address or ENS string that will be resolved.
+   * Instantiate a new ComplyDefi with the provided address or ENS string that will be resolved.
    * @param addressOrENS Must be a valid Ethereum address, checksumed, all lower-case or all uppercase.
    * @param options
    * @params options.provider If provided, the identity will use this provider for all blockchain operation (unless override) instead of the SDK default provider.
    */
-  public static async at(addressOrENS: string, options?: BlockchainOptions): Promise<Complydefi> {
+  public static async at(addressOrENS: string, options?: BlockchainOptions): Promise<ComplyDefi> {
     let address: string;
 
     if (!addressOrENS.includes('.')) {
@@ -40,7 +40,7 @@ export class Complydefi implements ComplydefiInterface {
       }
     }
 
-    return new Complydefi(address, options?.signer || options?.provider);
+    return new ComplyDefi(address, options?.signer || options?.provider);
   }
 
   /**
