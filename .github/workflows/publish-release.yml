@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-          scope: '@onchain-id'
+          scope: '@complyDeFi'
       - run: npm ci
       - run: npm run build
       - run: npm publish

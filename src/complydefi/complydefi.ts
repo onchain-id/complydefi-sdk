@@ -3,7 +3,7 @@ import { Provider } from '@ethersproject/providers';
 import { normalizeAddress, resolveENS } from '../core/utils/ENS';
 import { InvalidProviderError } from '../core/errors/Errors';
 import { BlockchainOptions } from '../core/utils/blockchain-options';
-import { ComplyDefiInterface } from "./complydefi.interface";
+import { ERC735 } from "./ERC735.interface";
 
 export class InvalidClaimError extends Error {
   public constructor({ message = 'Definition of the Claim is not valid.' }: { message?: string } = {}) {
@@ -14,7 +14,7 @@ export class InvalidClaimError extends Error {
   }
 }
 
-export class ComplyDefi implements ComplyDefiInterface {
+export class ComplyDefi implements ERC735 {
   public address: string;
   public provider?: Provider | Signer;
   private deploymentContract?: Contract;
