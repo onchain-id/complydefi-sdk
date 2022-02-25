@@ -76,7 +76,7 @@ const provider = new ethers.providers.JsonRpcProvider();
 
     const claims = await complyDefi.getRequiredClaims();
 
-    console.log(claims); ['claim1', 'claim2']
+    console.log(claims); // ['claim1', 'claim2']
 })();
 ```
 
