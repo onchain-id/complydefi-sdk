@@ -48,7 +48,7 @@ jobs:
   publish-npm:
     runs-on: ubuntu-latest
     container: node:16
-    needs: [build, create-release]
+    needs: create-release
     if: contains(needs.create-release.outputs.new_release, 'true')
     steps:
       - uses: actions/checkout@v2
