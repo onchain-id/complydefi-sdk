@@ -8,6 +8,7 @@ jobs:
   build:
     if: "github.event.release.prerelease"
     runs-on: ubuntu-latest
+    container: node:16
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -19,6 +20,7 @@ jobs:
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
+    container: node:16
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1

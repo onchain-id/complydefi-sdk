@@ -1,0 +1,32 @@
+name: Create Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    container: tokenydev/github-runner:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get release tag
+      shell: bash
+      run: |
+        echo "Getting release tag"
+        export RELEASE_TAG=$(grep version package.json | awk -F '"' '{print $4}')
+        echo "RELEASE_TAG=$(grep version package.json | awk -F '"' '{print $4}')" >> $GITHUB_ENV
+        git fetch --prune --unshallow --tags
+        export NEW_RELEASE=$((git tag | grep $RELEASE_TAG) || echo true)
+        echo "NEW_RELEASE=$((git tag | grep $RELEASE_TAG) || echo true)" >> $GITHUB_ENV
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ env.RELEASE_TAG }}
+        release_name: ${{ env.RELEASE_TAG }}
+      if: contains(env.NEW_RELEASE, 'true')

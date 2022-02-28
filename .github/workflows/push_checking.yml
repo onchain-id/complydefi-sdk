@@ -4,6 +4,7 @@ jobs:
   lint:
     name: Lint sources
     runs-on: ubuntu-latest
+    container: tokenydev/github-runner:latest
     strategy:
       matrix:
         node-version: [16.x]
@@ -33,6 +34,7 @@ jobs:
   e2e_test:
     name: E2E tests
     runs-on: ubuntu-latest
+    container: node:16
     strategy:
       matrix:
         node-version: [16.x]
