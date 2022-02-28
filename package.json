@@ -1,7 +1,8 @@
 {
-  "name": "@tokeny/complydefi-sdk",
+  "name": "@tokenyico/complydefi-sdk",
   "version": "1.0.0",
-  "description": "Interact with ComplyDeFi.",
+  "description": "Interact with ComplyDeFi",
+  "license": "MIT",
   "scripts": {
     "lint": "eslint src/**/**.ts",
     "lint:fix": "eslint src/**/**.ts --fix",
