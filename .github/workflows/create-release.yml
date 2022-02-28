@@ -20,6 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     container: tokenydev/github-runner:latest
     needs: build
+    outputs:
+      new_release: ${{ steps.release.outputs.new_release }}
     steps:
       - uses: actions/checkout@v2
       - name: Get release tag
@@ -30,10 +32,8 @@ jobs:
           export RELEASE_TAG=$(grep version package.json | awk -F '"' '{print $4}')
           echo "RELEASE_TAG=$(grep version package.json | awk -F '"' '{print $4}')" >> $GITHUB_ENV
           git fetch --prune --unshallow --tags
-          git tag
           export NEW_RELEASE=$((git tag | grep $RELEASE_TAG) || echo true)
           echo "NEW_RELEASE=$((git tag | grep $RELEASE_TAG) || echo true)" >> $GITHUB_ENV
-          echo $NEW_RELEASE
           echo "::set-output name=new_release::$NEW_RELEASE"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
