@@ -1,5 +1,4 @@
 name: Create Release
-
 on:
   push:
     branches:
@@ -24,13 +23,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Get release tag
-        id: release
         shell: bash
         run: |
           echo "Getting release tag"
           export RELEASE_TAG=$(grep version package.json | awk -F '"' '{print $4}')
           echo "RELEASE_TAG=$(grep version package.json | awk -F '"' '{print $4}')" >> $GITHUB_ENV
-          git fetch --prune --unshallow --tags
+          git fetch --prune --tags
           echo $RELEASE_TAG
           git tag
           export NEW_RELEASE=$((git tag | grep $RELEASE_TAG) || echo true)
