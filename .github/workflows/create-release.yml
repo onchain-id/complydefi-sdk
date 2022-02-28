@@ -28,9 +28,7 @@ jobs:
           echo "Getting release tag"
           export RELEASE_TAG=$(grep version package.json | awk -F '"' '{print $4}')
           echo "RELEASE_TAG=$(grep version package.json | awk -F '"' '{print $4}')" >> $GITHUB_ENV
-          git fetch --prune --tags
-          echo $RELEASE_TAG
-          git tag
+          git fetch --prune --unshallow --tags
           export NEW_RELEASE=$((git tag | grep $RELEASE_TAG) || echo true)
           echo "NEW_RELEASE=$((git tag | grep $RELEASE_TAG) || echo true)" >> $GITHUB_ENV
           echo "::set-output name=new_release::$NEW_RELEASE"
