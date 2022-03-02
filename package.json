@@ -1,5 +1,5 @@
 {
-  "name": "@tokenyico/complydefi-sdk",
+  "name": "@onchain-id/complydefi-sdk",
   "version": "1.0.0",
   "description": "Interact with ComplyDeFi",
   "license": "MIT",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tokenyICO/complydefi-sdk.git"
+    "url": "https://github.com/onchain-id/complydefi-sdk.git"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
