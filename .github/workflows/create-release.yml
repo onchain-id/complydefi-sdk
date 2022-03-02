@@ -57,7 +57,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-          scope: '@tokenyico'
+          scope: '@onchain-id'
       - run: npm ci
       - run: npm run build
       - run: npm publish
