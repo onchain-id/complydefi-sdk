@@ -2,7 +2,8 @@
   "name": "@onchain-id/complydefi-sdk",
   "version": "1.0.0",
   "description": "Interact with ComplyDeFi",
-  "license": "MIT",
+  "author": "OnchainID Organization",
+  "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
     "lint": "eslint src/**/**.ts",
     "lint:fix": "eslint src/**/**.ts --fix",
