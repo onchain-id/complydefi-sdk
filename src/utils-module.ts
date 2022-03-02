@@ -7,7 +7,6 @@ const contracts = {
 };
 
 export { crypto, contracts };
-export * from './core/utils/Utils';
 
 
 

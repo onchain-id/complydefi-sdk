@@ -1,9 +1,9 @@
 import { Web3Provider } from '@ethersproject/providers';
 import { ethers } from "ethers";
-import { InvalidProviderError } from "../../../dist/core/errors/Errors";
 import { InvalidAddressError } from "../../../src/core/utils/ENS";
 import { ComplyDefiSDK } from '../../../src';
 import { getTestProvider } from "../helpers/ganache.helper";
+import { InvalidProviderError } from "../../../src/core/errors/Errors";
 
 jest.mock('ethers');
 

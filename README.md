@@ -67,7 +67,7 @@ let provider = new ethers.providers.Web3Provider(web3.currentProvider);
 #### Get required claims
 
 ```javascript
-const { ComplyDefiSDK } = require('@tokenyICO/complydefi-sdk');
+const { ComplyDefiSDK } = require('@onchain-id/complydefi-sdk');
 
 const provider = new ethers.providers.JsonRpcProvider();
 
@@ -83,7 +83,7 @@ const provider = new ethers.providers.JsonRpcProvider();
 #### Check compliance of wallet address
 
 ```javascript
-const { ComplyDefiSDK } = require('@tokenyICO/complydefi-sdk');
+const { ComplyDefiSDK } = require('@onchain-id/complydefi-sdk');
 
 const provider = new ethers.providers.JsonRpcProvider();
 
@@ -98,9 +98,8 @@ const provider = new ethers.providers.JsonRpcProvider();
 
 ## Development
 
-- Install dependencies: `yarn`.
-- Lint code with `yarn lint`.
-- Run unit tests: `yarn test:unit`. You can run unit tests each time you modify a file with `yarn test:unit:watch`.
-- Build project with `yarn build`. This will build package into the `dist/` folder from the TypeScript sources.
-- Run end to end tests against a builded package: `yarn test:e2e`.
-- You can generate type documentation with `yarn build:docs`. This will build the TypeDoc website into `docs/type_doc`.
+- Install dependencies: `npm i`.
+- Lint code with `npm run lint lint`.
+- Run unit tests: `npm run test:unit`. You can run unit tests each time you modify a file with `npm run test:unit:watch`.
+- Build project with `npm run build`. This will build package into the `dist/` folder from the TypeScript sources.
+- Run end to end tests against a builded package: `npm run test:e2e`.
